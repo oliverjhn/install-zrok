@@ -44,6 +44,8 @@ if ($userPath -notlike "*$destination*") {
 }
 
 # Update current session PATH
-$env:Path = [Environment]::GetEnvironmentVariable("Path", "User")
+# $env:Path = [Environment]::GetEnvironmentVariable("Path", "User")
+$env:Path = [Environment]::GetEnvironmentVariable("Path", "User") + ";" + [Environment]::GetEnvironmentVariable("Path", "Machine")
+
 
 zrok version
